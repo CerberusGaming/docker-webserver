@@ -1,4 +1,4 @@
-FROM php:5-apache
+FROM php:7.1-apache-jessie
 
 RUN apt-get update \
     && apt-get install libldap2-dev \
