@@ -4,6 +4,8 @@ RUN apt-get update \
     && apt-get install libldap2-dev \
     && docker-php-ext-install ldap
     
+RUN docker-php-ext-install mysqli
+    
 RUN printf "\n" | pecl install -o -f redis \
     &&  rm -rf /tmp/pear \
     &&  docker-php-ext-enable redis
