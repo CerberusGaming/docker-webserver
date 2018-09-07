@@ -5,8 +5,8 @@ RUN apt-get update \
     && docker-php-ext-install ldap
     
 RUN printf "\n" | pecl install -o -f redis \
-&&  rm -rf /tmp/pear \
-&&  docker-php-ext-enable redis
+    &&  rm -rf /tmp/pear \
+    &&  docker-php-ext-enable redis
 
 RUN apt-get -y purge libldap2-dev \
     && rm -rf /var/lib/apt/lists/*
