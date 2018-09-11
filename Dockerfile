@@ -1,8 +1,10 @@
 FROM php:5-apache
 
 RUN apt-get update \
-    && apt-get install libldap2-dev \
-    && docker-php-ext-install ldap
+    && apt-get install -y libldb-dev libldap2-dev \
+    && ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so \
+    && ln -s /usr/lib/x86_64-linux-gnu/liblber.so /usr/lib/liblber.so\
+    && docker-php-ext-install ldap json
     
 RUN docker-php-ext-install mysqli
     
