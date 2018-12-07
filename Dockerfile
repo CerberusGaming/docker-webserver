@@ -1,4 +1,4 @@
-FROM php:7.1-apache-jessie
+FROM php:7-apache
 
 RUN apt-get update \
     && apt-get -y install libldap2-dev zlib1g-dev libxml2-dev libmcrypt-dev \
